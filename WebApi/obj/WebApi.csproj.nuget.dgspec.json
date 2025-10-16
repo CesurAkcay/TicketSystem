@@ -32,7 +32,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
