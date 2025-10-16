@@ -22,6 +22,16 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        public TicketSystemContext()
+        {
+
+        } //boş constructor
+
+        public TicketSystemContext(DbContextOptions<TicketSystemContext> options) : base(options)
+        {
+
+        }  //connectionString bilgisini dışardan alıyoruz.
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<AdminUser> AdminUsers { get; set; }
         public DbSet<Ticket> Tickets { get; set; }  
