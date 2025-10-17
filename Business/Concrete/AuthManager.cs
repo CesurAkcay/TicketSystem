@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
+using Core.Utilities.Security.Jwt;
 using Entities.Concrete;
 using Entities.Dtos;
 using System;
@@ -16,10 +17,13 @@ namespace Business.Concrete
     {
         private IAdminUserService _adminUserService;
         private ICustomerService _customerService;
-        public AuthManager(IAdminUserService adminUserService, ICustomerService customerService)
+        private ITokenHelper _tokenHelper;
+
+        public AuthManager(IAdminUserService adminUserService, ICustomerService customerService, ITokenHelper tokenHelper)
         {
             _adminUserService = adminUserService;
             _customerService = customerService;
+            _tokenHelper = tokenHelper;
         }
         public IDataResult<AdminUser> AdminUserLogin(AdminUserLoginDto adminUserLoginDto)
         {
@@ -88,14 +92,27 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IDataResult<AdminUser> AdminUserRegister(AdminUserRegisterDto adminUserRegisterDto)
-        {
-            throw new NotImplementedException();
-        }
-
         public IResult adminUserExist(string email)
         {
-            throw new NotImplementedException();
+            if (_adminUserService.GetByMail(email) != null)
+            {
+                return new ErrorResult(Messages.UserAlreadyExist);
+            }
+            return new SuccessResult();
+        }
+
+        public IDataResult<AccessToken> CreateAccessTokenForAdminUser(AdminUser adminUser)
+        {
+            var roles = new List<string> { "Admin" };
+            var accessToken = _tokenHelper.CreateToken(adminUser, roles);
+            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+        }
+
+        public IDataResult<AccessToken> CreateAccessTokenForCustomer(Customer customer)
+        {
+            var roles = new List<string> { "Customer" };
+            var accessToken = _tokenHelper.CreateToken(customer, roles);
+            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
     }
 }
