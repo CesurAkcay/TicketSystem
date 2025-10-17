@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "25/7S3uJdfs=",
+  "dgSpecHash": "n7mXkgDcY8U=",
   "success": true,
   "projectFilePath": "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ARTEMIS\\.nuget\\packages\\autofac\\8.4.0\\autofac.8.4.0.nupkg.sha512",
+    "C:\\Users\\ARTEMIS\\.nuget\\packages\\autofac.extensions.dependencyinjection\\10.0.0\\autofac.extensions.dependencyinjection.10.0.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

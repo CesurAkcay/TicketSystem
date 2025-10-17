@@ -26,7 +26,7 @@ namespace WebApi.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("add")]
+        [HttpPost("add")]
         public ActionResult Add(Ticket ticket)
         {
             var result = _ticketService.Add(ticket);
@@ -36,7 +36,7 @@ namespace WebApi.Controllers
             }
             return BadRequest(result.Message);
         }
-        [HttpGet("delete")]
+        [HttpPost("delete")]
         public ActionResult Delete(Ticket ticket)
         {
             var result = _ticketService.Delete(ticket);
@@ -47,7 +47,7 @@ namespace WebApi.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("update")]
+        [HttpPost("update")]
         public ActionResult Update(Ticket ticket)
         {
             var result = _ticketService.Update(ticket);

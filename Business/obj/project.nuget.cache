@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7lnMdGIluMg=",
+  "dgSpecHash": "8Uuq0zFBMbM=",
   "success": true,
   "projectFilePath": "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\Business\\Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ARTEMIS\\.nuget\\packages\\autofac\\8.4.0\\autofac.8.4.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
