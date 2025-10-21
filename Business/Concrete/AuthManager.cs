@@ -15,9 +15,9 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IAdminUserService _adminUserService;
-        private ICustomerService _customerService;
-        private ITokenHelper _tokenHelper;
+        private readonly IAdminUserService _adminUserService;
+        private readonly ICustomerService _customerService;
+        private readonly ITokenHelper _tokenHelper;
 
         public AuthManager(IAdminUserService adminUserService, ICustomerService customerService, ITokenHelper tokenHelper)
         {
@@ -46,6 +46,10 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<Customer>(Messages.CustomerNotFound);
             }
+            if (!HashingHelper.VerifyPasswordHash(customerLoginDto.Password, customerToCheck.PasswordHash, customerToCheck.PasswordSalt))
+            {
+                return new ErrorDataResult<Customer>(Messages.PasswordError);
+            }
             return new SuccessDataResult<Customer>(customerToCheck, Messages.SuccesfullCustomerLogin);
         }
 
@@ -64,12 +68,16 @@ namespace Business.Concrete
             _adminUserService.AdminUserAdd(adminUser);
             return new SuccessDataResult<AdminUser>(adminUser, Messages.UserRegistered);
         }
-        public IDataResult<Customer> CustomerRegister(CustomerRegisterDto customerRegisterDto)
+        public IDataResult<Customer> CustomerRegister(CustomerRegisterDto customerRegisterDto, string password)
         {
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             var customer = new Customer
             {
                 Email = customerRegisterDto.Email,
                 FullName = customerRegisterDto.FullName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
             };
             _customerService.Add(customer);
             return new SuccessDataResult<Customer>(customer, Messages.CustomerRegistered);

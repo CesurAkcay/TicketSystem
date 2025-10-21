@@ -13,3 +13,4 @@ namespace Entities.Dtos
         public string? FullName { get; set; }
     }
 }
+ 

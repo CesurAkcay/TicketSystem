@@ -8,9 +8,9 @@ namespace Core.Utilities.Security.Jwt
 {
     public class TokenOptions
     {
-        public string Audience { get; set; }
-        public string Issuer { get; set; }
-        public int AccessTokenExpiration { get; set; }
-        public string SecurityKey { get; set; }
+        public string Audience { get; set; } //tokenin hitap edeceði yer
+        public string Issuer { get; set; } //tokenin kim tarafýndan verildiði
+        public int AccessTokenExpiration { get; set; } //tokenin ne kadar süre geçerli olacaðý
+        public string SecurityKey { get; set; } //tokenin imzalanmasýnda kullanýlacak anahtar
     }
 }

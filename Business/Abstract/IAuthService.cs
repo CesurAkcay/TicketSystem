@@ -15,7 +15,7 @@ namespace Business.Abstract
         IDataResult<AdminUser> AdminUserLogin(AdminUserLoginDto adminUserLoginDto);
         IDataResult<AdminUser> AdminUserRegister(AdminUserRegisterDto adminUserRegisterDto, string password);
         IDataResult<Customer> CustomerLogin(CustomerLoginDto customerLoginDto);
-        IDataResult<Customer> CustomerRegister(CustomerRegisterDto customerRegisterDto);
+        IDataResult<Customer> CustomerRegister(CustomerRegisterDto customerRegisterDto, string password);
         IResult adminUserExist(string email);
         IResult customerExist(string email);
         IDataResult<AccessToken> CreateAccessTokenForAdminUser(AdminUser adminUser);

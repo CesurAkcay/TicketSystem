@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -8,13 +9,14 @@ namespace WebApi.Controllers
     [ApiController]
     public class TicketController : ControllerBase
     {
-        private ITicketService _ticketService;
+        private readonly ITicketService _ticketService;
 
         public TicketController(ITicketService ticketService)
         {
             _ticketService = ticketService;
         }
         [HttpGet("getall")]
+        [Authorize(Roles = "Admin")]
         public ActionResult GetTicketList()
         {
             var result = _ticketService.GetList();

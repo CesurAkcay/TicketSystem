@@ -11,6 +11,7 @@ C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Autofac.Exten
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Humanizer.dll
+C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -29,6 +30,7 @@ C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Ext
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
@@ -185,5 +187,4 @@ C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\obj\Debug\net8.0\refint\WebApi
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\obj\Debug\net8.0\WebApi.pdb
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\obj\Debug\net8.0\ref\WebApi.dll
-C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\ARTEMIS\source\repos\TicketSystem\WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

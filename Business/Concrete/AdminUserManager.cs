@@ -11,7 +11,7 @@ namespace Business.Concrete
 {
     public class AdminUserManager : IAdminUserService
     {
-        IAdminUserDal _adminUserDal;
+        private readonly IAdminUserDal _adminUserDal;
         public AdminUserManager(IAdminUserDal adminUserDal)
         {
             _adminUserDal = adminUserDal;

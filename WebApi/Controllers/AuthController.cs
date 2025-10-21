@@ -57,9 +57,10 @@ namespace WebApi.Controllers
                 return BadRequest(userExists.Message);
             }
             var registerResult = _authService.AdminUserRegister(adminUserRegisterDto, adminUserRegisterDto.Password);
+            var result = _authService.CreateAccessTokenForAdminUser(registerResult.Data);
             if (registerResult.Success)
             {
-                return Ok(registerResult.Data);
+                return Ok(result.Data);
             }
             return BadRequest(registerResult.Message);
         }
@@ -72,10 +73,11 @@ namespace WebApi.Controllers
             {
                 return BadRequest(customerExists.Message);
             }
-            var customerRegisterResult = _authService.CustomerRegister(customerRegisterDto);
+            var customerRegisterResult = _authService.CustomerRegister(customerRegisterDto, customerRegisterDto.Password);
+            var result = _authService.CreateAccessTokenForCustomer(customerRegisterResult.Data);
             if (customerRegisterResult.Success)
             {
-                return Ok(customerRegisterResult.Data);
+                return Ok(result.Data);
             }
             return BadRequest(customerRegisterResult.Message);
         }

@@ -1,5 +1,69 @@
 [
   {
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "AdminUserLogin",
+    "RelativePath": "api/Auth/loginAdminUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminUserLoginDto",
+        "Type": "Entities.Dtos.AdminUserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "CustomerLogin",
+    "RelativePath": "api/Auth/loginCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerLoginDto",
+        "Type": "Entities.Dtos.CustomerLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "AdminUserRegister",
+    "RelativePath": "api/Auth/registerAdminUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminUserRegisterDto",
+        "Type": "Entities.Dtos.AdminUserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "CustomerRegister",
+    "RelativePath": "api/Auth/registerCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerRegisterDto",
+        "Type": "Entities.Dtos.CustomerRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi.Controllers.TicketController",
     "Method": "Add",
     "RelativePath": "api/Ticket/add",
