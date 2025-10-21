@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
@@ -18,12 +19,15 @@ namespace Business.Concrete
         private readonly IAdminUserService _adminUserService;
         private readonly ICustomerService _customerService;
         private readonly ITokenHelper _tokenHelper;
+        private readonly IMapper _mapper;   
 
-        public AuthManager(IAdminUserService adminUserService, ICustomerService customerService, ITokenHelper tokenHelper)
+        public AuthManager(IAdminUserService adminUserService, ICustomerService customerService,
+            ITokenHelper tokenHelper, IMapper mapper)
         {
             _adminUserService = adminUserService;
             _customerService = customerService;
             _tokenHelper = tokenHelper;
+            _mapper = mapper;
         }
         public IDataResult<AdminUser> AdminUserLogin(AdminUserLoginDto adminUserLoginDto)
         {

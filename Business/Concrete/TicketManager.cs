@@ -1,8 +1,10 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,30 +16,35 @@ namespace Business.Concrete
     public class TicketManager : ITicketService
     {
         private readonly ITicketDal _ticketDal;
-        public TicketManager(ITicketDal ticketDal)
+        private readonly IMapper _mapper;
+        public TicketManager(ITicketDal ticketDal, IMapper mapper)
         {
             _ticketDal = ticketDal;
+            _mapper = mapper;
         }
-        public IResult Add(Ticket ticket)
+        public IResult Add(TicketPostDto ticketDto)
         {
+            var ticket = _mapper.Map<Ticket>(ticketDto);
             _ticketDal.Add(ticket);
             return new SuccessResult(Messages.TicketAdded);
         }
 
-        public IResult Delete(Ticket ticket)
+        public IResult Delete(TicketPostDto ticketDto)
         {
+            var ticket = _mapper.Map<Ticket>(ticketDto);
             _ticketDal.Delete(ticket);
             return new SuccessResult(Messages.TicketDeleted);
         }
 
-        public IDataResult<List<Ticket>> GetList()
+        public IDataResult<List<TicketListDto>> GetList()
         {
-            var ticket = _ticketDal.GetList().ToList();
-            return new SuccessDataResult<List<Ticket>>(ticket);
+            var ticketDtos = _mapper.Map<List<TicketListDto>>(_ticketDal.GetList(). ToList());
+            return new SuccessDataResult<List<TicketListDto>>(ticketDtos);
         }
 
-        public IResult Update(Ticket ticket)
+        public IResult Update(TicketPostDto ticketDto)
         {
+            var ticket = _mapper.Map<Ticket>(ticketDto);
             _ticketDal.Update(ticket);
             return new SuccessResult(Messages.TicketUpdated);
         }

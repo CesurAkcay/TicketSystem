@@ -1,5 +1,7 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,9 +31,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add")]
-        public ActionResult Add(Ticket ticket)
+        public ActionResult Add(TicketPostDto ticketDto)
         {
-            var result = _ticketService.Add(ticket);
+            var result = _ticketService.Add(ticketDto);
             if (result.Success)
             {
                 return Ok(result.Message);
@@ -39,9 +41,9 @@ namespace WebApi.Controllers
             return BadRequest(result.Message);
         }
         [HttpPost("delete")]
-        public ActionResult Delete(Ticket ticket)
+        public ActionResult Delete(TicketPostDto ticketDto)
         {
-            var result = _ticketService.Delete(ticket);
+            var result = _ticketService.Delete(ticketDto);
             if (result.Success)
             {
                 return Ok(result.Message);
@@ -50,9 +52,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("update")]
-        public ActionResult Update(Ticket ticket)
+        public ActionResult Update(TicketPostDto ticketDto)
         {
-            var result = _ticketService.Update(ticket);
+            var result = _ticketService.Update(ticketDto);
             if (result.Success)
             {
                 return Ok(result.Message);

@@ -1,10 +1,12 @@
 ﻿using Autofac;
+using AutoMapper;
 using Business.Abstract;
 using Business.Concrete;
 using Core.Utilities.Security.Jwt;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.EntityFramework.Contexts;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,18 @@ namespace Business.DependencyResolvers.AutoFac
 
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
+
+            builder.Register(context => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<TicketProfile>();
+                cfg.AddProfile<AdminUserProfile>();
+                cfg.AddProfile<CustomerProfile>();
+
+            })).AsSelf().SingleInstance();
+
+            builder.Register(context => context.Resolve<MapperConfiguration>().CreateMapper())
+                .As<IMapper>()
+                .InstancePerLifetimeScope();
         }
     }
 }

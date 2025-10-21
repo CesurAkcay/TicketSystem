@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace Business.Abstract
 {
     public interface ITicketService
     {
-        IDataResult<List<Ticket>> GetList();
-        IResult Add(Ticket ticket);
-        IResult Delete(Ticket ticket);
-        IResult Update(Ticket ticket);
+        IDataResult<List<TicketListDto>> GetList();
+        IResult Add(TicketPostDto ticketDto);
+        IResult Delete(TicketPostDto ticketDto);
+        IResult Update(TicketPostDto ticketDto);
     }
 }
