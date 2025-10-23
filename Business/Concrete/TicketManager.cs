@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.AutoFac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;

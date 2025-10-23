@@ -16,13 +16,15 @@ export class TicketListComponent implements OnInit {
   tickets: TicketListDto[] = [];
   loading: boolean = false;
   errorMessage: string = '';
-  currentUser$ = this.authService.currentUser$;
+  currentUser$;
 
   constructor(
     private ticketService: TicketService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {
+    this.currentUser$ = this.authService.currentUser$;
+  }
 
   ngOnInit(): void {
     this.loadTickets();

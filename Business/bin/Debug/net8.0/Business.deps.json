@@ -10,7 +10,8 @@
         "dependencies": {
           "Autofac": "8.4.0",
           "DataAccess": "1.0.0",
-          "Entities": "1.0.0"
+          "Entities": "1.0.0",
+          "FluentValidation": "12.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -27,16 +28,14 @@
           }
         }
       },
-      "AutoMapper/15.0.1": {
+      "AutoMapper/12.0.1": {
         "dependencies": {
-          "Microsoft.Extensions.Logging": "9.0.10",
-          "Microsoft.Extensions.Options": "9.0.10",
-          "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
+          "Microsoft.CSharp": "4.7.0"
         },
         "runtime": {
-          "lib/net8.0/AutoMapper.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.1.0"
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
           }
         }
       },
@@ -75,6 +74,53 @@
           }
         }
       },
+      "Castle.Core/1.2.0": {
+        "dependencies": {
+          "NLog": "1.0.0.505",
+          "log4net": "1.2.10"
+        },
+        "runtime": {
+          "lib/Castle.Core.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6623"
+          },
+          "lib/Castle.Services.Logging.NLogIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          },
+          "lib/Castle.Services.Logging.log4netIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          }
+        }
+      },
+      "Castle.DynamicProxy/2.2.0": {
+        "dependencies": {
+          "Castle.Core": "1.2.0"
+        },
+        "runtime": {
+          "lib/Castle.DynamicProxy2.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.6628"
+          }
+        }
+      },
+      "FluentValidation/12.0.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
+          }
+        }
+      },
+      "log4net/1.2.10": {
+        "runtime": {
+          "lib/2.0/log4net.dll": {
+            "assemblyVersion": "1.2.10.0",
+            "fileVersion": "1.2.10.0"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -83,6 +129,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/5.1.6": {
         "dependencies": {
           "Azure.Identity": "1.11.4",
@@ -498,6 +545,14 @@
           }
         }
       },
+      "NLog/1.0.0.505": {
+        "runtime": {
+          "lib/NLog.dll": {
+            "assemblyVersion": "1.0.0.505",
+            "fileVersion": "1.0.0.505"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -707,6 +762,8 @@
       },
       "Core/1.0.0": {
         "dependencies": {
+          "Castle.DynamicProxy": "2.2.0",
+          "FluentValidation": "12.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.10",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.10",
           "Microsoft.Extensions.Configuration.Binder": "9.0.10",
@@ -737,7 +794,7 @@
       },
       "Entities/1.0.0": {
         "dependencies": {
-          "AutoMapper": "15.0.1",
+          "AutoMapper": "12.0.1",
           "Core": "1.0.0"
         },
         "runtime": {
@@ -762,12 +819,12 @@
       "path": "autofac/8.4.0",
       "hashPath": "autofac.8.4.0.nupkg.sha512"
     },
-    "AutoMapper/15.0.1": {
+    "AutoMapper/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kNo7iIAi4p4XxoEbfif2WUQtc6RTx+UteiRYPqCOKj+4q4+YaWono06qTxoHBy+0N1HdganA//k5p/VmWw2AMA==",
-      "path": "automapper/15.0.1",
-      "hashPath": "automapper.15.0.1.nupkg.sha512"
+      "sha512": "sha512-hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "path": "automapper/12.0.1",
+      "hashPath": "automapper.12.0.1.nupkg.sha512"
     },
     "Azure.Core/1.38.0": {
       "type": "package",
@@ -783,12 +840,47 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+    "Castle.Core/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nzf3go+P9ZReJOWX1FVAnd2eBcF7u1sjIll2KC80B2kTmJTJY/cqvJG6kK/x/dXrPh4zmdPatnnVWZ/nrKzEaw==",
+      "path": "castle.core/1.2.0",
+      "hashPath": "castle.core.1.2.0.nupkg.sha512"
+    },
+    "Castle.DynamicProxy/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3eiJiPYF7wK0CmHn47d56kbJLfvTGfLZ8D5G1dLLRbCo8h28gn6qkKTxFk/65FDz9zeUqWWmpZ3SAwhbpOr1sw==",
+      "path": "castle.dynamicproxy/2.2.0",
+      "hashPath": "castle.dynamicproxy.2.2.0.nupkg.sha512"
+    },
+    "FluentValidation/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "path": "fluentvalidation/12.0.0",
+      "hashPath": "fluentvalidation.12.0.0.nupkg.sha512"
+    },
+    "log4net/1.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yP7PCpxPt5cB9yiRAvCwyW5YRqXV4jM4tpVLnm/ls2nJt786l5srbSdm5xIEVMXz/kOYqLKP177Gyqey1wdP/A==",
+      "path": "log4net/1.2.10",
+      "hashPath": "log4net.1.2.10.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/5.1.6": {
       "type": "package",
@@ -1020,6 +1112,13 @@
       "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "NLog/1.0.0.505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7dnEHYmlfAho9gbM0KvjcfSej419aevcYyDNFcQf6ALcj+ZEkns64ZAN1KOOQK0lL20WHWXbKML4aA088BENTg==",
+      "path": "nlog/1.0.0.505",
+      "hashPath": "nlog.1.0.0.505.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",

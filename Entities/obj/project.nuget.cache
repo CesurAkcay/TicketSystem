@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "c7zi/zH63GQ=",
+  "dgSpecHash": "/qiLC37H7OY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ARTEMIS\\source\\repos\\TicketSystem\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ARTEMIS\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
+    "C:\\Users\\ARTEMIS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\castle.core\\1.2.0\\castle.core.1.2.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\castle.dynamicproxy\\2.2.0\\castle.dynamicproxy.2.2.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\log4net\\1.2.10\\log4net.1.2.10.nupkg.sha512",
+    "C:\\Users\\ARTEMIS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.10\\microsoft.entityframeworkcore.9.0.10.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.10\\microsoft.entityframeworkcore.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\ARTEMIS\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.10\\microsoft.entityframeworkcore.analyzers.9.0.10.nupkg.sha512",

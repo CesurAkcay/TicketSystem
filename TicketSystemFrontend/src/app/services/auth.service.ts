@@ -15,7 +15,7 @@ import {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/api/Auth'; // Update with your API URL
+  private apiUrl = 'http://localhost:5248/api/Auth';
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 

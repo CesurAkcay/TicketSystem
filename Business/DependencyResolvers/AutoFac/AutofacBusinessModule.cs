@@ -1,4 +1,4 @@
-﻿using Autofac;
+using Autofac;
 using AutoMapper;
 using Business.Abstract;
 using Business.Concrete;
@@ -7,6 +7,7 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Dtos;
+using Entities.MappingProfiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,17 +34,19 @@ namespace Business.DependencyResolvers.AutoFac
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
 
+            // AutoMapper configuration
             builder.Register(context => new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile<TicketProfile>();
-                cfg.AddProfile<AdminUserProfile>();
-                cfg.AddProfile<CustomerProfile>();
-
+                cfg.AddProfile(new TicketProfile());
+                cfg.AddProfile(new AdminUserProfile());
+                cfg.AddProfile(new CustomerProfile());
             })).AsSelf().SingleInstance();
 
-            builder.Register(context => context.Resolve<MapperConfiguration>().CreateMapper())
-                .As<IMapper>()
-                .InstancePerLifetimeScope();
+            builder.Register(context =>
+            {
+                var config = context.Resolve<MapperConfiguration>();
+                return config.CreateMapper();
+            }).As<IMapper>().InstancePerLifetimeScope();
         }
     }
 }

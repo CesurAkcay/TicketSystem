@@ -7,7 +7,7 @@ import { TicketListDto, TicketPostDto } from '../models/ticket.models';
   providedIn: 'root'
 })
 export class TicketService {
-  private apiUrl = 'http://localhost:5000/api/Ticket'; // Update with your API URL
+  private apiUrl = 'http://localhost:5248/api/Ticket';
 
   constructor(private http: HttpClient) {}
 

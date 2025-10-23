@@ -150,17 +150,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             }
           }
@@ -181,17 +181,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             }
           }
@@ -212,17 +212,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Ticket"
+                "$ref": "#/components/schemas/TicketPostDto"
               }
             }
           }
@@ -308,73 +308,6 @@
         },
         "additionalProperties": false
       },
-      "Customer": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "createdBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "updatedBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "deletedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "deletedBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "rowVersion": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "passwordHash": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
-          "passwordSalt": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CustomerLoginDto": {
         "type": "object",
         "properties": {
@@ -407,62 +340,21 @@
         },
         "additionalProperties": false
       },
-      "Ticket": {
+      "TicketPostDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "code": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "createdAt": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
-          "createdBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "updatedBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "deletedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "deletedBy": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "rowVersion": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
           "ticketOwnerId": {
             "type": "string",
             "format": "uuid"
-          },
-          "ticketOwner": {
-            "$ref": "#/components/schemas/Customer"
-          },
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
           },
           "status": {
             "type": "integer",

@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "Core/1.0.0": {
         "dependencies": {
+          "Castle.DynamicProxy": "2.2.0",
+          "FluentValidation": "12.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.10",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.10",
           "Microsoft.Extensions.Configuration.Binder": "9.0.10",
@@ -15,6 +17,53 @@
         },
         "runtime": {
           "Core.dll": {}
+        }
+      },
+      "Castle.Core/1.2.0": {
+        "dependencies": {
+          "NLog": "1.0.0.505",
+          "log4net": "1.2.10"
+        },
+        "runtime": {
+          "lib/Castle.Core.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6623"
+          },
+          "lib/Castle.Services.Logging.NLogIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          },
+          "lib/Castle.Services.Logging.log4netIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          }
+        }
+      },
+      "Castle.DynamicProxy/2.2.0": {
+        "dependencies": {
+          "Castle.Core": "1.2.0"
+        },
+        "runtime": {
+          "lib/Castle.DynamicProxy2.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.6628"
+          }
+        }
+      },
+      "FluentValidation/12.0.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
+          }
+        }
+      },
+      "log4net/1.2.10": {
+        "runtime": {
+          "lib/2.0/log4net.dll": {
+            "assemblyVersion": "1.2.10.0",
+            "fileVersion": "1.2.10.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/9.0.10": {
@@ -194,6 +243,14 @@
           }
         }
       },
+      "NLog/1.0.0.505": {
+        "runtime": {
+          "lib/NLog.dll": {
+            "assemblyVersion": "1.0.0.505",
+            "fileVersion": "1.0.0.505"
+          }
+        }
+      },
       "System.Diagnostics.DiagnosticSource/9.0.10": {
         "runtime": {
           "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
@@ -221,6 +278,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Castle.Core/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nzf3go+P9ZReJOWX1FVAnd2eBcF7u1sjIll2KC80B2kTmJTJY/cqvJG6kK/x/dXrPh4zmdPatnnVWZ/nrKzEaw==",
+      "path": "castle.core/1.2.0",
+      "hashPath": "castle.core.1.2.0.nupkg.sha512"
+    },
+    "Castle.DynamicProxy/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3eiJiPYF7wK0CmHn47d56kbJLfvTGfLZ8D5G1dLLRbCo8h28gn6qkKTxFk/65FDz9zeUqWWmpZ3SAwhbpOr1sw==",
+      "path": "castle.dynamicproxy/2.2.0",
+      "hashPath": "castle.dynamicproxy.2.2.0.nupkg.sha512"
+    },
+    "FluentValidation/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "path": "fluentvalidation/12.0.0",
+      "hashPath": "fluentvalidation.12.0.0.nupkg.sha512"
+    },
+    "log4net/1.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yP7PCpxPt5cB9yiRAvCwyW5YRqXV4jM4tpVLnm/ls2nJt786l5srbSdm5xIEVMXz/kOYqLKP177Gyqey1wdP/A==",
+      "path": "log4net/1.2.10",
+      "hashPath": "log4net.1.2.10.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/9.0.10": {
       "type": "package",
@@ -340,6 +425,13 @@
       "sha512": "sha512-lKIZiBiGd36k02TCdMHp1KlNWisyIvQxcYJvIkz7P4gSQ9zi8dgh6S5Grj8NNG7HWYIPfQymGyoZ6JB5d1Lo1g==",
       "path": "microsoft.identitymodel.tokens/8.14.0",
       "hashPath": "microsoft.identitymodel.tokens.8.14.0.nupkg.sha512"
+    },
+    "NLog/1.0.0.505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7dnEHYmlfAho9gbM0KvjcfSej419aevcYyDNFcQf6ALcj+ZEkns64ZAN1KOOQK0lL20WHWXbKML4aA088BENTg==",
+      "path": "nlog/1.0.0.505",
+      "hashPath": "nlog.1.0.0.505.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/9.0.10": {
       "type": "package",
