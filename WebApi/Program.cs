@@ -1,6 +1,9 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Business.DependencyResolvers.AutoFac;
+using Core.DependencyResolvers;
+using Core.Extentions;
+using Core.Utilities.IoC;
 using Core.Utilities.Security.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -30,6 +33,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOrigin", 
         builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+});
+builder.Services.AddDependencyResolvers(new ICoreModule[]
+{
+    new CoreModule()
 });
 
 builder.Services.AddControllers();

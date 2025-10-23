@@ -15,5 +15,7 @@ namespace Business.Abstract
         IResult Add(TicketPostDto ticketDto);
         IResult Delete(TicketPostDto ticketDto);
         IResult Update(TicketPostDto ticketDto);
+
+       // IResult TransactionalOperation(TicketPostDto ticketDto);
     }
 }

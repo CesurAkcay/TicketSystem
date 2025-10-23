@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.AutoFac.Caching;
 using Core.Aspects.AutoFac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
@@ -26,7 +27,7 @@ namespace Business.Concrete
             _mapper = mapper;
         }
 
-        [ValidationAspect(typeof(TicketValidator), Priority = 1)]
+        //[ValidationAspect(typeof(TicketValidator), Priority = 1)]
         public IResult Add(TicketPostDto ticketDto)
         {
             ;
@@ -41,18 +42,20 @@ namespace Business.Concrete
             _ticketDal.Delete(ticket);
             return new SuccessResult(Messages.TicketDeleted);
         }
-
+        [CacheAspect(1)]
         public IDataResult<List<TicketListDto>> GetList()
         {
             var ticketDtos = _mapper.Map<List<TicketListDto>>(_ticketDal.GetList(). ToList());
             return new SuccessDataResult<List<TicketListDto>>(ticketDtos);
         }
 
+     
+
         public IResult Update(TicketPostDto ticketDto)
         {
             var ticket = _mapper.Map<Ticket>(ticketDto);
             _ticketDal.Update(ticket);
             return new SuccessResult(Messages.TicketUpdated);
-        }
+        }  
     }
 }
