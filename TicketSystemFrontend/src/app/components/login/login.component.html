@@ -1,0 +1,60 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1 class="login-title">Ticketlar</h1>
+    
+    <div class="login-type-selector">
+      <button 
+        [class.active]="loginType === 'customer'"
+        (click)="switchLoginType('customer')"
+        class="type-btn">
+        Customer Login
+      </button>
+      <button 
+        [class.active]="loginType === 'admin'"
+        (click)="switchLoginType('admin')"
+        class="type-btn">
+        Admin Login
+      </button>
+    </div>
+
+    <form (ngSubmit)="onLogin()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="email" 
+          name="email"
+          placeholder="Enter your email"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password"
+          placeholder="Enter your password"
+          required>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <button 
+        type="submit" 
+        class="login-btn"
+        [disabled]="loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+
+      <div class="signup-link">
+        Don't have an account? 
+        <a routerLink="/signup">Sign up here</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="ticket-list-page">
+  <div class="header">
+    <div class="header-content">
+      <h1 class="page-title">Ticketlar</h1>
+      <div class="header-actions">
+        <button class="create-btn" (click)="onCreateTicket()">+ New Ticket</button>
+        <div *ngIf="currentUser$ | async as user" class="user-info">
+          <span class="user-name">{{ user.fullName }}</span>
+          <button class="logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div *ngIf="loading" class="loading">
+      Loading tickets...
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+      <button (click)="loadTickets()">Retry</button>
+    </div>
+
+    <div *ngIf="!loading && !errorMessage" class="tickets-grid">
+      <div 
+        *ngFor="let ticket of tickets; let i = index" 
+        class="ticket-card"
+        [ngClass]="getCardColor(i)">
+        <div class="ticket-header">
+          <div class="ticket-code">#{{ ticket.code }}</div>
+          <div class="ticket-date">{{ ticket.createdAtStr }}</div>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-customer">{{ ticket.customerFullName }}</div>
+          <div class="ticket-status">{{ ticket.statusStr }}</div>
+        </div>
+        <div class="ticket-footer">
+          <button class="detail-btn">Detay</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && !errorMessage && tickets.length === 0" class="no-tickets">
+      <p>No tickets found</p>
+      <button class="create-btn" (click)="onCreateTicket()">Create Your First Ticket</button>
+    </div>
+  </div>
+</div>

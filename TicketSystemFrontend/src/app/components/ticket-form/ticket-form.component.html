@@ -1,0 +1,69 @@
+<div class="ticket-form-page">
+  <div class="form-container">
+    <div class="form-card">
+      <h1 class="form-title">{{ isEditMode ? 'Edit Ticket' : 'Create New Ticket' }}</h1>
+      
+      <form (ngSubmit)="onSubmit()" class="ticket-form">
+        <div class="form-group">
+          <label for="code">Ticket Code *</label>
+          <input 
+            type="text" 
+            id="code" 
+            [(ngModel)]="code" 
+            name="code"
+            placeholder="Enter ticket code (e.g., 4650)"
+            required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select 
+              id="status" 
+              [(ngModel)]="status" 
+              name="status">
+              <option *ngFor="let option of statusOptions" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select 
+              id="priority" 
+              [(ngModel)]="priority" 
+              name="priority">
+              <option *ngFor="let option of priorityOptions" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="message error-message">
+          {{ errorMessage }}
+        </div>
+
+        <div *ngIf="successMessage" class="message success-message">
+          {{ successMessage }}
+        </div>
+
+        <div class="form-actions">
+          <button 
+            type="button" 
+            class="cancel-btn"
+            (click)="onCancel()">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            class="submit-btn"
+            [disabled]="loading">
+            {{ loading ? 'Saving...' : (isEditMode ? 'Update Ticket' : 'Create Ticket') }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

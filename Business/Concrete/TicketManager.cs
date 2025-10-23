@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -22,8 +24,11 @@ namespace Business.Concrete
             _ticketDal = ticketDal;
             _mapper = mapper;
         }
+
+        [ValidationAspect(typeof(TicketValidator))]
         public IResult Add(TicketPostDto ticketDto)
         {
+            ;
             var ticket = _mapper.Map<Ticket>(ticketDto);
             _ticketDal.Add(ticket);
             return new SuccessResult(Messages.TicketAdded);

@@ -61,6 +61,10 @@
             "Autofac": {
               "target": "Package",
               "version": "[8.4.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
             }
           },
           "imports": [
@@ -130,6 +134,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Castle.DynamicProxy": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.10, )"

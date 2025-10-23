@@ -1,0 +1,82 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <h1 class="signup-title">Create Account</h1>
+    
+    <div class="signup-type-selector">
+      <button 
+        [class.active]="signupType === 'customer'"
+        (click)="switchSignupType('customer')"
+        class="type-btn">
+        Customer Signup
+      </button>
+      <button 
+        [class.active]="signupType === 'admin'"
+        (click)="switchSignupType('admin')"
+        class="type-btn">
+        Admin Signup
+      </button>
+    </div>
+
+    <form (ngSubmit)="onSignup()" class="signup-form">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input 
+          type="text" 
+          id="fullName" 
+          [(ngModel)]="fullName" 
+          name="fullName"
+          placeholder="Enter your full name"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="email" 
+          name="email"
+          placeholder="Enter your email"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password"
+          placeholder="Enter your password"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          [(ngModel)]="confirmPassword" 
+          name="confirmPassword"
+          placeholder="Confirm your password"
+          required>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <button 
+        type="submit" 
+        class="signup-btn"
+        [disabled]="loading">
+        {{ loading ? 'Creating Account...' : 'Sign Up' }}
+      </button>
+
+      <div class="login-link">
+        Already have an account? 
+        <a routerLink="/login">Login here</a>
+      </div>
+    </form>
+  </div>
+</div>
