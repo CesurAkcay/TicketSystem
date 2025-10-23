@@ -26,7 +26,7 @@ namespace Business.Concrete
             _mapper = mapper;
         }
 
-        [ValidationAspect(typeof(TicketValidator))]
+        [ValidationAspect(typeof(TicketValidator), Priority = 1)]
         public IResult Add(TicketPostDto ticketDto)
         {
             ;

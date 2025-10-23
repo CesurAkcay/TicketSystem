@@ -51,9 +51,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Castle.DynamicProxy": {
+            "Autofac.Extras.DynamicProxy": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[7.1.0, )"
             },
             "FluentValidation": {
               "target": "Package",
